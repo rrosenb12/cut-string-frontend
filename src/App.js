@@ -4,7 +4,8 @@ import React from "react"
 class App extends React.Component {
 
   state = {
-    stringToCut: ""
+    stringToCut: "",
+    returnString: ""
   }
 
   handleChange = e => {
@@ -25,8 +26,15 @@ class App extends React.Component {
         string_to_cut: this.state.stringToCut
       })
     })
-    .then(response => console.log(response.json()))
-    // .then(console.log(response))
+    .then(response => response.json())
+    .then(stringObject => this.handleCut(stringObject))
+  }
+
+  handleCut = stringObject=> {
+    this.setState({
+      returnString: stringObject.return_string
+    })
+    console.log(this.state)
   }
 
   render() {
@@ -43,6 +51,7 @@ class App extends React.Component {
           />
           <input type="submit" value="Submit"></input>
         </form>
+        <h1>Your Result:</h1>
       </>
     )
   }
