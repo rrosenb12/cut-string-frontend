@@ -49,9 +49,16 @@ class App extends React.Component {
             value={this.state.stringToCut}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Submit"></input>
+          <input type="submit" value="Cut It Up!"></input>
         </form>
-        <h1>Your Result:</h1>
+        {this.state.returnString !== "" && (
+          <>
+          <h1>Your Result:</h1>
+          <h2>{this.state.returnString}</h2>
+          </>
+          )
+        }
+        
       </>
     )
   }
