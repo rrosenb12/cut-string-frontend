@@ -11,8 +11,8 @@ class App extends React.Component {
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   handleSubmit = e => {
     e.preventDefault()
@@ -34,7 +34,6 @@ class App extends React.Component {
     this.setState({
       returnString: stringObject.return_string
     })
-    console.log(this.state)
   }
 
   render() {
@@ -58,7 +57,6 @@ class App extends React.Component {
           </>
           )
         }
-        
       </>
     )
   }
