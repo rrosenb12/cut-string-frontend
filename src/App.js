@@ -38,7 +38,7 @@ class App extends React.Component {
 
   render() {
     return(
-      <>
+      <div className="center">
         <h1>Enter a String to Cut</h1>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -57,7 +57,7 @@ class App extends React.Component {
           </>
           )
         }
-      </>
+      </div>
     )
   }
 }
